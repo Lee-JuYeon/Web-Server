@@ -1,17 +1,17 @@
 # Web-Server
-### OS
- __Ubuntu 20.04.3__
+## OS
+  Ubuntu 20.04.3
 
 
-### Apache2 vs Nginx
-####   무엇이 다른가?
+## Apache2 vs Nginx
+  ### 무엇이 다른가?
   __◼ Apache__
   1. Client 접속마다 Process 혹은 Thread를 생성하는 구조.
     = Client 갯수 ⬆ -> CPU 사용량 ⬆, Memory 사용량 ⬆ 
   2. 프로세스가 'Blocking' 될 때 이전에 요청된 프로세스가 완료될 때까지 대기상태.
-    = 해결방안으로는 Keep Alive를 활성화하면 되지만, KeepAlive는 대량 접속 시 효율이 급격히 떨어짐
+    = 해결방안으로는 Keep Alive를 활성화하면 되지만, KeepAlive는 대량 접속 시 효율이 급격히 떨어짐.
 
-  ⚠❗ 'Keep Alive'이 뭐야?
+  ⚠ 'Keep Alive'이 뭐야?
   > HTTP 프로토콜의 특성상 한 번 통신이 이루어지면 접속을 끊어 버리지만, 
   > KeepAlive On상태에서는 KeepAliveTimeOut시간 동안 접속을 끊지 않고 다음 접속을 기다린다.
   > 즉, 한 번 연결된 Client와 통신을 유지하고 있기 때문에, 
@@ -21,9 +21,19 @@
   1. 'Event-Driven'방식. 
   2. 한 개 또는 고정된 Process만 생성, 그 내부에서 비동기로 효율적인 방식으로 Task를 처리.
     = Client 갯수 ⬆ -> 추가적인 생성비용(CPU, Memory) 🙅🏻‍♂️
-  3. 'Context Switching' 비용이 적다
-  4. 비동기 이벤트 기반으로 요청
+  3. 'Context Switching' 비용이 적다.
+  4. 비동기 이벤트 기반으로 요청.
   5. Apache와 달리 CPU와 관계없이 I/O들을 전부 Event  Listener로 미루기 때문에 흐름 끊김이 없다.
+  6. 보안에 대해 우수하다.
+    = 앞 단의 Nginx로 reverse proxy로 사용하고 뒷 단에는 WAS를 설치하여,
+    외부에 노출되는 인터페이스에 대해 Nginx WAS 부분만 노출가능하다. 
+    IF) 사용자가 직접적인 WebServer로의 접근을 한다라고 하면 문제가 발생할 수 있기 때문에
+        직접적이지 않고 한 단계를 더 거침으로써 보안적인 부분을 처리할 수 있다.
+  7. Backend-Service 장애 대응처리.
+    = Backend-service에 대해 max fails, fail timeout시 백업 서버로 진입할 수 잇도록 처리가능.
+  8. Module로 구성
+  9. Single-Threaded(Worker Process)
+  
 
   ⚠'Context Switching'이 뭐야?
   > Context는 Thread가 Task(작업)을 진행하는 동안 작업정를 보관하는 것을 말한다. 
@@ -36,6 +46,7 @@
   ||Apache2|Nginx|
   |:---:|:---:|:---:|
   |성능||👍|
+  |보안||👍|
   |모듈|👍||
   |안정성|👍||
   |확장성|👍||
