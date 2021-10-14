@@ -31,8 +31,8 @@ __여기서 잠깐❗ 'Context Switching'이 뭐야?__
 >  즉, Thread 갯수가 많아질 수록 Context Switching 작업은 더 빈번하게 일어나며 성능 저하를 야기한다.
 __Apacche & Nginx 장점__
 
-|:---:|:---:|:---:|
 ||Apache2|Nginx|
+|:---:|:---:|:---:|
 |성능|⬇|⬆|
 |모듈|⬆|⬇|
 |안정성|⬆|⬇|
