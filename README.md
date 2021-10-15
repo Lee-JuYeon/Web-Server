@@ -1,8 +1,16 @@
 # Web-Server
 ## OS
   Ubuntu 20.04.3
-
-
+  다운로드 )
+    우분투 데스크탑 : https://ubuntu.com/download/desktop ('Ubuntu 20.04.3 LTS' 다운로드)
+    우분투 서버 : https://ubuntu.com/download/server ('Option 2: Manual server installation'을 클릭해서 'Download ubuntu server 20.04.3 LTS' 다운 )
+    PuTTY : https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html (본인은 'putty.exe' 64-bit x86을 받았다)
+## Ubuntu Server
+  1. date를 입력하면 UTC기준으로 나오는데, 한국 기준으로 변경해보자
+  '''
+  sudo timedatectl set-timezone "Asia/Seoul"
+  '''
+  
 ## Apache2 vs Nginx
   ### 무엇이 다른가?
   __◼ Apache__
