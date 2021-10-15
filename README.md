@@ -7,9 +7,8 @@
     PuTTY : https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html (본인은 'putty.exe' 64-bit x86을 받았다)
 ## Ubuntu Server
   1. date를 입력하면 UTC기준으로 나오는데, 한국 기준으로 변경해보자
-  '''
-  sudo timedatectl set-timezone "Asia/Seoul"
-  '''
+          sudo timedatectl set-timezone "Asia/Seoul"
+  
   
 ## Apache2 vs Nginx
   ### 무엇이 다른가?
