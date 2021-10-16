@@ -1,13 +1,45 @@
 # Web-Server
 ## OS
   Ubuntu 20.04.3
-  다운로드 )
-    우분투 데스크탑 : https://ubuntu.com/download/desktop ('Ubuntu 20.04.3 LTS' 다운로드)
-    우분투 서버 : https://ubuntu.com/download/server ('Option 2: Manual server installation'을 클릭해서 'Download ubuntu server 20.04.3 LTS' 다운 )
-    PuTTY : https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html (본인은 'putty.exe' 64-bit x86을 받았다)
+  1. 우분투 데스크탑 
+  > https://ubuntu.com/download/desktop
+  > 'Ubuntu 20.04.3 LTS' 다운로드
+  
+  2. 우분투 서버 
+  > https://ubuntu.com/download/server 
+  > 'Option 2: Manual server installation'을 클릭해서 'Download ubuntu server 20.04.3 LTS' 다운 
+  
+  3. PuTTY 
+  > https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+  > 본인은 'putty.exe' 64-bit x86을 받았다
+  
 ## Ubuntu Server
   1. date를 입력하면 UTC기준으로 나오는데, 한국 기준으로 변경해보자
-          sudo timedatectl set-timezone "Asia/Seoul"
+  > sudo timedatectl set-timezone "Asia/Seoul"
+  2. 순정상태 백업
+  > VirtualBox에서 파일 -> 이미지 내보내기.
+  >  -> 여기서 이미지라는게 우분투 서버 그 자체인 것 같다.
+  >  하여 '이미지 내보내기'는 현재 우분투 서버 현재 상태를 그래도 복사하여 저장하는 것 같음.
+  3. 패키지 확인
+  > dpkg -l | grep  ssh  (-1은 숫자 1이 아니라 소문자 L이며, |은 엔터 위 '원화' 또는 '\'의 shift버전)
+  4. ssh접속
+  > 위 과정 중 로그에서 'openssh-server'이 찍히지 않는다면, 아래와 같은 커맨드를 입력해서 설치한다.
+  > sudo apt -y install openssh-server
+  > 이후에 ssh접속 커맨드를 입력해준다
+  > sudo systemctl start ssh
+  5. 한글팩 추가
+  > sudo apt -y install language-pack-ko
+  6. 한글팩 활성화
+  > sudo update-locale LANG=ko_KR.UTF-8 LC_MESSAGES=POSIX
+  > 세션 변경(로그인 다시 하면 됨)
+  7. root권한으로 변경
+  > sudo -i // root권한에서 빠져나오려면 'logout' 커맨드를 입력하면 된다
+  8. root 비밀번호 설정
+  > sudo passwd root
+  9. sudo를 매번 쓰기 귀찮을 때?
+  > su - (입력후에 다른 sudo 커맨드 사용 할 때에,  sudo를 붙히지 않아도 된다)
+  
+  
   
   
 ## Apache2 vs Nginx
