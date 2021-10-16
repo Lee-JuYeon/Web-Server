@@ -103,7 +103,9 @@
       - 압축
       - SSL (암호화)
       - 캐시
-  
+  __HTTPS__
+  - 'Let's Encrypt'에서 3개월짜리 무료 라이센스를 받을 수 있는데, 3개월 후엔 자동으로 인증서 갱신을 통해 평생 무료로 쓰자
+  > 'Let's encrypt' url = https://letsencrypt.org/ko/
 
 참고한 링크
 1. https://victorydntmd.tistory.com/231 
