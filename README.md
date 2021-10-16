@@ -92,7 +92,20 @@
   |호환성|👍||
   |유지보수|👍||
 
+  __Nginx 사용__
+  - 로드 밸런서
+    - 효율성
+    - 안정성(누군가 죽어도 다른애가 있다)
+  - Reverse Proxy
+    - 보안
+    - 유연성 (외부에서 직접적으로 모르기에)
+    - 레이턴시 감소
+      - 압축
+      - SSL (암호화)
+      - 캐시
+  
 
 참고한 링크
 1. https://victorydntmd.tistory.com/231 
 2. https://velog.io/@ksso730/Nginx-Apache-%EB%B9%84%EA%B5%90
+3. https://www.youtube.com/watch?v=QeBqwwbsBbM
