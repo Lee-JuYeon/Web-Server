@@ -1,11 +1,5 @@
 ## Web-Server
 __클라이언트 <-> 서버 <-> 백앤드 <-> DB__
-
-__클라이언트__ : Android, iOS, Web, Game
-__서버__ : Apache,Nginx, Tomcat, Express
-__BackEnd__ : ASP, GSP, PHP, NodeJS, Django, Spring
-__DB__ : MariaDB, MongoDB
-
   |클라이언트|서버|백앤드|DB|
   |:---:|:---:|:---:|:---:|
   |Android|Apache2|PHP|MariaDB|
