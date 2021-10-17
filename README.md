@@ -5,8 +5,9 @@ __클라이언트__ : Android, iOS, Web, Game
 __서버__ : Apache,Nginx, Tomcat, Express
 __BackEnd__ : ASP, GSP, PHP, NodeJS, Django, Spring
 __DB__ : MariaDB, MongoDB
+
   |클라이언트|서버|백앤드|DB|
-  |:---:|:---:|:---:|:---:|:---:|
+  |:---:|:---:|:---:|:---:|
   |Android|Apache2|PHP|MariaDB|
   |iOS|Nginx|NodeJS|MongoDB|
   |Web|Tomcat|Django||
@@ -15,6 +16,7 @@ __DB__ : MariaDB, MongoDB
   |||Spring||
   
 __프로토콜 정리__
+
   |Protocol|Port|유형|접근방식|
   |:---:|:---:|:---:|:---:|
   |HTTP|80|Client||
