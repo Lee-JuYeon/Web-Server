@@ -1,4 +1,18 @@
-# Web-Server
+## Web-Server
+클라이언트 <-> 서버 <-> 백앤드 <-> DB
+클라이언트 : Android, iOS, Web, Game
+서버 : Apache,Nginx, Tomcat, Express
+BackEnd : ASP, GSP, PHP, NodeJS, Django, Spring
+DB : MariaDB, MongoDB
+  ||클라이언트|서버|백앤드|DB|
+  |:---:|:---:|:---:|:---:|:---:|
+  ||Android|Apache2|PHP|MariaDB|
+  ||iOS|Nginx|NodeJS|MongoDB|
+  ||Web|Tomcat|Django||
+  ||Game|Express|ASP||
+  ||||GSP||
+  ||||Spring||
+  
 ## OS
   Ubuntu 20.04.3
   1. 우분투 데스크탑 
