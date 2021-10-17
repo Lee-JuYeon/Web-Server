@@ -1,9 +1,10 @@
 ## Web-Server
-클라이언트 <-> 서버 <-> 백앤드 <-> DB
-클라이언트 : Android, iOS, Web, Game
-서버 : Apache,Nginx, Tomcat, Express
-BackEnd : ASP, GSP, PHP, NodeJS, Django, Spring
-DB : MariaDB, MongoDB
+__클라이언트 <-> 서버 <-> 백앤드 <-> DB__
+
+__클라이언트__ : Android, iOS, Web, Game
+__서버__ : Apache,Nginx, Tomcat, Express
+__BackEnd__ : ASP, GSP, PHP, NodeJS, Django, Spring
+__DB__ : MariaDB, MongoDB
   |클라이언트|서버|백앤드|DB|
   |:---:|:---:|:---:|:---:|:---:|
   |Android|Apache2|PHP|MariaDB|
@@ -13,7 +14,7 @@ DB : MariaDB, MongoDB
   ||GSP||
   |||Spring||
   
-프로토콜 정리
+__프로토콜 정리__
   |Protocol|Port|유형|접근방식|
   |:---:|:---:|:---:|:---:|
   |HTTP|80|Client||
