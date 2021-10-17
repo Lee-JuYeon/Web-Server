@@ -6,8 +6,8 @@ __클라이언트 <-> 서버 <-> 백앤드 <-> DB__
   |iOS|Nginx|NodeJS|MongoDB|
   |Web|Tomcat|Django||
   |Game|Express|ASP||
-  ||GSP||
   |||Spring||
+  |||GSP||
   
 __프로토콜 정리__
 
@@ -35,29 +35,63 @@ __프로토콜 정리__
   > 본인은 'putty.exe' 64-bit x86을 받았다
   
 ## Ubuntu Server
-  1. date를 입력하면 UTC기준으로 나오는데, 한국 기준으로 변경해보자
+  1. root로 접근
+    -$ sudo su
+  2. apt 업데이트
+    -$ apt-get update
+  3. Nginx 설치
+    -$ apt-get install nginx
+  4. Nginx 상태 확인
+    -$ systemctl status nginx (Nginx의 상태를 보여주는 커맨드)
+    -$ qq 또는 q (Nginx 상태창에서 나오게하는 커맨드)
+    
+  5. Nginx를 위해 Port(포트) 열어주기
+    - VirtualBox 
+    - 해당 우분투 서버 '설정(S)'
+    - 고급(D)
+    - 포트 포워딩(P)
+    - '새 포트 포워딩 규칙 추가' 클릭
+    - 호스트 포트 & 게스트 포트 = 80 으로 추가 (80번은 HTTP를 위한것)
+    - '새 포트 포워드 규칙 추가' 클릭
+    - 호스트 포트 & 게스트 포트 = 22 으로 추가 (22번은 SSH를 위한것)
+  6. 웹사이트에 '127.0.0.1' 이동
+  7. 웹사이트에 'Welcome to Nginx' 텍스트 출력됨
+  8. Node.js설치
+    -$ apt-get install nodejs (nodejs 설치 커맨드)
+    -$ y (설치 승낙)
+    -$ node -v (Node.js 버전확인. 나는 2021-10-17기준으로 v10.19.0이 다운되어있다)
+    -$ curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_14_setup.sh (아마 디렉토리가 없다고 뜰꺼다)
+    -$ bash nodesource 까지만 타이핑 -> Tab키 누르기 -> 엔터  (여기까지가 PPA등록이다)
+    -$ apt-get install nodejs (nodejs 한번 더 설치)
+    -$ node -v (2021-10-17기준으로 v14.18.1 버전 설치 완료 확인)
+    -$ npm -v (2021-10-17기준으로 npm버전은 6.14.15 버전 설치 완료 확인)
+  9. MariaDB설치
+    -$ apt-get install mariadb-server
+
+
+  9. date를 입력하면 UTC기준으로 나오는데, 한국 기준으로 변경해보자
   > sudo timedatectl set-timezone "Asia/Seoul"
-  2. 순정상태 백업
+  10. 순정상태 백업
   > VirtualBox에서 파일 -> 이미지 내보내기.
   >  -> 여기서 이미지라는게 우분투 서버 그 자체인 것 같다.
   >  하여 '이미지 내보내기'는 현재 우분투 서버 현재 상태를 그래도 복사하여 저장하는 것 같음.
-  3. 패키지 확인
+  11. 패키지 확인
   > dpkg -l | grep  ssh  (-1은 숫자 1이 아니라 소문자 L이며, |은 엔터 위 '원화' 또는 '\'의 shift버전)
-  4. ssh접속
+  12. ssh접속
   > 위 과정 중 로그에서 'openssh-server'이 찍히지 않는다면, 아래와 같은 커맨드를 입력해서 설치한다.
   > sudo apt -y install openssh-server
   > 이후에 ssh접속 커맨드를 입력해준다
   > sudo systemctl start ssh
-  5. 한글팩 추가
+  13. 한글팩 추가
   > sudo apt -y install language-pack-ko
-  6. 한글팩 활성화
+  14. 한글팩 활성화
   > sudo update-locale LANG=ko_KR.UTF-8 LC_MESSAGES=POSIX
   > 세션 변경(로그인 다시 하면 됨)
-  7. root권한으로 변경
+  15. root권한으로 변경
   > sudo -i // root권한에서 빠져나오려면 'logout' 커맨드를 입력하면 된다
-  8. root 비밀번호 설정
+  16. root 비밀번호 설정
   > sudo passwd root
-  9. sudo를 매번 쓰기 귀찮을 때?
+  17. sudo를 매번 쓰기 귀찮을 때?
   > su - (입력후에 다른 sudo 커맨드 사용 할 때에,  sudo를 붙히지 않아도 된다)
   
   
