@@ -4,14 +4,23 @@
 서버 : Apache,Nginx, Tomcat, Express
 BackEnd : ASP, GSP, PHP, NodeJS, Django, Spring
 DB : MariaDB, MongoDB
-  ||클라이언트|서버|백앤드|DB|
+  |클라이언트|서버|백앤드|DB|
   |:---:|:---:|:---:|:---:|:---:|
-  ||Android|Apache2|PHP|MariaDB|
-  ||iOS|Nginx|NodeJS|MongoDB|
-  ||Web|Tomcat|Django||
-  ||Game|Express|ASP||
-  ||||GSP||
-  ||||Spring||
+  |Android|Apache2|PHP|MariaDB|
+  |iOS|Nginx|NodeJS|MongoDB|
+  |Web|Tomcat|Django||
+  |Game|Express|ASP||
+  ||GSP||
+  |||Spring||
+프로토콜 정리
+  |Protocol|Port|
+  |:---:|:---:|
+  |HTTP|80|
+  |HTTPS|443|
+  |SSH|22|
+  |SFTP|22|
+  |FTP|21|
+  |MySQL|3306|
   
 ## OS
   Ubuntu 20.04.3
