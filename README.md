@@ -12,15 +12,16 @@ DB : MariaDB, MongoDB
   |Game|Express|ASP||
   ||GSP||
   |||Spring||
+  
 프로토콜 정리
-  |Protocol|Port|
-  |:---:|:---:|
-  |HTTP|80|
-  |HTTPS|443|
-  |SSH|22|
-  |SFTP|22|
-  |FTP|21|
-  |MySQL|3306|
+  |Protocol|Port|유형|접근방식|
+  |:---:|:---:|:---:|:---:|
+  |HTTP|80|Client||
+  |HTTPS|443|Client||
+  |SSH|22|관리자|터미널|
+  |SFTP|22|관리자|파일전송|
+  |FTP|21|관리자|파일전송|
+  |MySQL|3306|관리자|DB|
   
 ## OS
   Ubuntu 20.04.3
