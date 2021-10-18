@@ -39,13 +39,29 @@ __프로토콜 정리__
     -$ sudo su
   2. apt 업데이트
     -$ apt-get update
-  3. Nginx 설치
+  3. MariaDB 설치
+    '''
+    $ apt install mariadb-server
+    $ Y 
+    $ systemctl status mariadb (mariadb 상태 확인)
+    $ mysql_secure_installation (mysql이 맞다. mariadb 아니라고 당황하지 마시길)
+    $ root 계정 비밀번호 물음 시, 계정 비밀번호 입력
+    $ Y ( set root password? )
+    $ 비밀번호, 비밀번호 확인 입력
+    $ Y ( remove anonymous users? )
+    $ Y ( disallow root login remotely? )
+    $ Y ( remove test dtabase and access to it? )
+    $ Y ( Reload privilege tables now? )
+    $ sudo mysql -u root -p ( mariadb 비밀번호 설정. 그리고 입력된 mysql이 맞다. mariadb 아니라고 당황하지 마시길 )
+    $ exit ( MariaDB 모니터에서 빠져나오는 커맨드 )
+    '''
+  4. Nginx 설치
     -$ apt-get install nginx
-  4. Nginx 상태 확인
+  5. Nginx 상태 확인
     -$ systemctl status nginx (Nginx의 상태를 보여주는 커맨드)
     -$ qq 또는 q (Nginx 상태창에서 나오게하는 커맨드)
     
-  5. Nginx를 위해 Port(포트) 열어주기
+  6. Nginx를 위해 Port(포트) 열어주기
     - VirtualBox 
     - 해당 우분투 서버 '설정(S)'
     - 고급(D)
@@ -54,9 +70,9 @@ __프로토콜 정리__
     - 호스트 포트 & 게스트 포트 = 80 으로 추가 (80번은 HTTP를 위한것)
     - '새 포트 포워드 규칙 추가' 클릭
     - 호스트 포트 & 게스트 포트 = 22 으로 추가 (22번은 SSH를 위한것)
-  6. 웹사이트에 '127.0.0.1' 이동
-  7. 웹사이트에 'Welcome to Nginx' 텍스트 출력됨
-  8. Node.js설치
+  7. 웹사이트에 '127.0.0.1' 이동
+  8. 웹사이트에 'Welcome to Nginx' 텍스트 출력됨
+  9. Node.js설치
     -$ apt-get install nodejs (nodejs 설치 커맨드)
     -$ y (설치 승낙)
     -$ node -v (Node.js 버전확인. 나는 2021-10-17기준으로 v10.19.0이 다운되어있다)
