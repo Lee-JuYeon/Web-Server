@@ -35,12 +35,12 @@ __프로토콜 정리__
   > 본인은 'putty.exe' 64-bit x86을 받았다
   
 ## Ubuntu Server
-  1. root로 접근
-    -$ sudo su
-  2. apt 업데이트
-    -$ apt-get update
-  3. MariaDB 설치
-    '''
+  1. root로 접근   
+    -$ sudo su   
+  2. apt 업데이트   
+    -$ apt-get update   
+  3. MariaDB 설치   
+    '''   
     $ apt install mariadb-server   
     $ Y    
     $ systemctl status mariadb (mariadb 상태 확인)    
@@ -55,33 +55,47 @@ __프로토콜 정리__
     $ sudo mysql -u root -p ( mariadb 비밀번호 설정. 그리고 입력된 mysql이 맞다. mariadb 아니라고 당황하지 마시길 )   
     $ exit ( MariaDB 모니터에서 빠져나오는 커맨드 )   
     '''
-  4. Nginx 설치
-    -$ apt-get install nginx   
-  5. Nginx 상태 확인
-    -$ systemctl status nginx (Nginx의 상태를 보여주는 커맨드)   
-    -$ q (Nginx 상태창에서 나오게하는 커맨드)   
+  4. Nginx 설치   
+    -$ apt-get install nginx      
+  5. Nginx 상태 확인   
+    -$ systemctl status nginx (Nginx의 상태를 보여주는 커맨드)      
+    -$ q (Nginx 상태창에서 나오게하는 커맨드)      
     
-  6. Nginx를 위해 Port(포트) 열어주기
-    - VirtualBox    
-    - 해당 우분투 서버 '설정(S)'   
-    - 고급(D)   
-    - 포트 포워딩(P)   
-    - '새 포트 포워딩 규칙 추가' 클릭    
-    - 호스트 포트 & 게스트 포트 = 80 으로 추가 (80번은 HTTP를 위한것)    
+  6. Nginx를 위해 Port(포트) 열어주기    
+    - VirtualBox       
+    - 해당 우분투 서버 '설정(S)'      
+    - 고급(D)      
+    - 포트 포워딩(P)      
+    - '새 포트 포워딩 규칙 추가' 클릭      
+    - 호스트 포트 & 게스트 포트 = 80 으로 추가 (80번은 HTTP를 위한것)      
     - '새 포트 포워드 규칙 추가' 클릭    
     - 호스트 포트 & 게스트 포트 = 22 으로 추가 (22번은 SSH를 위한것)    
   7. 웹사이트에 '127.0.0.1' 이동
   8. 웹사이트에 'Welcome to Nginx' 텍스트 출력됨
-  9. Node.js설치
-    -$ apt-get install nodejs (nodejs 설치 커맨드)
-    -$ y (설치 승낙)
-    -$ node -v (Node.js 버전확인. 나는 2021-10-17기준으로 v10.19.0이 다운되어있다)
-    -$ curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_14_setup.sh (아마 디렉토리가 없다고 뜰꺼다)
-    -$ bash nodesource 까지만 타이핑 -> Tab키 누르기 -> 엔터  (여기까지가 PPA등록이다)
-    -$ apt-get install nodejs (nodejs 한번 더 설치)
-    -$ node -v (2021-10-17기준으로 v14.18.1 버전 설치 완료 확인)
-    -$ npm -v (2021-10-17기준으로 npm버전은 6.14.15 버전 설치 완료 확인)
-  10. 
+  9. Node.js설치   
+    -$ apt-get install nodejs (nodejs 설치 커맨드)    
+    -$ y (설치 승낙)    
+    -$ node -v (Node.js 버전확인. 나는 2021-10-17기준으로 v10.19.0이 다운되어있다)    
+    -$ curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_14_setup.sh (아마 디렉토리가 없다고 뜰꺼다)    
+    -$ bash nodesource 까지만 타이핑 -> Tab키 누르기 -> 엔터  (여기까지가 PPA등록이다)     
+    -$ apt-get install nodejs (nodejs 한번 더 설치)     
+    -$ node -v (2021-10-17기준으로 v14.18.1 버전 설치 완료 확인)     
+    -$ npm -v (2021-10-17기준으로 npm버전은 6.14.15 버전 설치 완료 확인)    
+  10. MariaDB 외부접속    
+    $ mariadb -u root -p
+    $ create user '사용자이름'@'%' identified by '비밀번호'; (클라이언트 생성 + 비밀번호 설정, 작은 따욤표(')가 있다)
+    $ create database 데이터베이스이름; (DB 새로 하나 생성, 작은 따옴표(')가 없다)
+    $ grant all privileges on 데이터베이스이름.* to '사용자이름'@'%';
+    $ flush privileges; (변경사항 저장)
+    $ exit (mariadb에서 로그아웃)
+    $ vi /etc/mysql/mariadb.conf.d/50-server.cnf
+    $ 'bind-address - 127.0.0.1' 부분에 커서를 옮기고 'i'를 누른다
+    $ # (i를 누르면 insert모드로 변환되는데 맨 앞에 #을 붙히면 해당 라인은 주석처리가 된다)
+    $ ESC
+    $ :wq! (vi 편집기에서 탈출)
+    $ service mariadb restart (mariadb 재시작)
+    
+
 
 
   9. date를 입력하면 UTC기준으로 나오는데, 한국 기준으로 변경해보자
