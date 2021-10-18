@@ -41,8 +41,8 @@ __프로토콜 정리__
     -$ apt-get update
   3. MariaDB 설치
     '''
-    $ apt install mariadb-server
-    $ Y 
+            $ apt install mariadb-server
+            $ Y 
     $ systemctl status mariadb (mariadb 상태 확인)
     $ mysql_secure_installation (mysql이 맞다. mariadb 아니라고 당황하지 마시길)
     $ root 계정 비밀번호 물음 시, 계정 비밀번호 입력
