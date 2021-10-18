@@ -41,35 +41,35 @@ __프로토콜 정리__
     -$ apt-get update
   3. MariaDB 설치
     '''
-            $ apt install mariadb-server
-            $ Y 
-    $ systemctl status mariadb (mariadb 상태 확인)
-    $ mysql_secure_installation (mysql이 맞다. mariadb 아니라고 당황하지 마시길)
-    $ root 계정 비밀번호 물음 시, 계정 비밀번호 입력
-    $ Y ( set root password? )
-    $ 비밀번호, 비밀번호 확인 입력
-    $ Y ( remove anonymous users? )
-    $ Y ( disallow root login remotely? )
-    $ Y ( remove test dtabase and access to it? )
-    $ Y ( Reload privilege tables now? )
-    $ sudo mysql -u root -p ( mariadb 비밀번호 설정. 그리고 입력된 mysql이 맞다. mariadb 아니라고 당황하지 마시길 )
-    $ exit ( MariaDB 모니터에서 빠져나오는 커맨드 )
+    $ apt install mariadb-server   
+    $ Y    
+    $ systemctl status mariadb (mariadb 상태 확인)    
+    $ mysql_secure_installation (mysql이 맞다. mariadb 아니라고 당황하지 마시길)    
+    $ root 계정 비밀번호 물음 시, 계정 비밀번호 입력    
+    $ Y ( set root password? )    
+    $ 비밀번호, 비밀번호 확인 입력   
+    $ Y ( remove anonymous users? )   
+    $ Y ( disallow root login remotely? )   
+    $ Y ( remove test dtabase and access to it? )   
+    $ Y ( Reload privilege tables now? )   
+    $ sudo mysql -u root -p ( mariadb 비밀번호 설정. 그리고 입력된 mysql이 맞다. mariadb 아니라고 당황하지 마시길 )   
+    $ exit ( MariaDB 모니터에서 빠져나오는 커맨드 )   
     '''
   4. Nginx 설치
-    -$ apt-get install nginx
+    -$ apt-get install nginx   
   5. Nginx 상태 확인
-    -$ systemctl status nginx (Nginx의 상태를 보여주는 커맨드)
-    -$ qq 또는 q (Nginx 상태창에서 나오게하는 커맨드)
+    -$ systemctl status nginx (Nginx의 상태를 보여주는 커맨드)   
+    -$ q (Nginx 상태창에서 나오게하는 커맨드)   
     
   6. Nginx를 위해 Port(포트) 열어주기
-    - VirtualBox 
-    - 해당 우분투 서버 '설정(S)'
-    - 고급(D)
-    - 포트 포워딩(P)
-    - '새 포트 포워딩 규칙 추가' 클릭
-    - 호스트 포트 & 게스트 포트 = 80 으로 추가 (80번은 HTTP를 위한것)
-    - '새 포트 포워드 규칙 추가' 클릭
-    - 호스트 포트 & 게스트 포트 = 22 으로 추가 (22번은 SSH를 위한것)
+    - VirtualBox    
+    - 해당 우분투 서버 '설정(S)'   
+    - 고급(D)   
+    - 포트 포워딩(P)   
+    - '새 포트 포워딩 규칙 추가' 클릭    
+    - 호스트 포트 & 게스트 포트 = 80 으로 추가 (80번은 HTTP를 위한것)    
+    - '새 포트 포워드 규칙 추가' 클릭    
+    - 호스트 포트 & 게스트 포트 = 22 으로 추가 (22번은 SSH를 위한것)    
   7. 웹사이트에 '127.0.0.1' 이동
   8. 웹사이트에 'Welcome to Nginx' 텍스트 출력됨
   9. Node.js설치
@@ -81,8 +81,7 @@ __프로토콜 정리__
     -$ apt-get install nodejs (nodejs 한번 더 설치)
     -$ node -v (2021-10-17기준으로 v14.18.1 버전 설치 완료 확인)
     -$ npm -v (2021-10-17기준으로 npm버전은 6.14.15 버전 설치 완료 확인)
-  9. MariaDB설치
-    -$ apt-get install mariadb-server
+  10. 
 
 
   9. date를 입력하면 UTC기준으로 나오는데, 한국 기준으로 변경해보자
