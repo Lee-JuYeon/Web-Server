@@ -34,13 +34,32 @@ __프로토콜 정리__
   > https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
   > 본인은 'putty.exe' 64-bit x86을 받았다
   
+## DB (Window10)
+  1. 방화벽 열기
+  2. 고급설정 클릭
+  3. 인바운드 규칙 클릭
+  4. 새 규칙 클릭
+  5. '프로그램' 선택
+  6. '다음 프로그램 검토' 클릭
+  7. '찾아보기' 클릭
+  8.  MairaDB가 설치된 경로에 mysqld.exe 을선택해준다.
+  9.  '연결 허용'
+  10. '도메인', '개인', '공용' 클릭
+  11. 이름에 대충 아무거나 넣는다.
+  12. 마침
 ## Ubuntu Server
   1. root로 접근   
     -$ sudo su   
   2. apt 업데이트   
     -$ apt-get update   
-  3. MariaDB 설치   
-    '''   
+  3. net-tools설치   
+    $ apt install net-tools
+    $ ifconfig (가상머신 ip주소 확인, enp0xx : inet xx.xx.xx.xx로 뜨는 번호가 ip주소다)
+  4. 윈도우(또는 맥)으로 가서 가상머신 확인
+    $ 윈도우 명령프롬포트 열기
+    $ ping xxx.xx.x.xx (xxx.xx.x.xx는 가상머신에서 확인한 ip주소)
+  6. MariaDB 설치   
+    
     $ apt install mariadb-server   
     $ Y    
     $ systemctl status mariadb (mariadb 상태 확인)    
@@ -54,7 +73,7 @@ __프로토콜 정리__
     $ Y ( Reload privilege tables now? )   
     $ sudo mysql -u root -p ( mariadb 비밀번호 설정. 그리고 입력된 mysql이 맞다. mariadb 아니라고 당황하지 마시길 )   
     $ exit ( MariaDB 모니터에서 빠져나오는 커맨드 )   
-    '''
+    
   4. Nginx 설치   
     -$ apt-get install nginx      
   5. Nginx 상태 확인   
