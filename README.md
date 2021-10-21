@@ -113,6 +113,8 @@ __프로토콜 정리__
     $ ESC
     $ :wq! (vi 편집기에서 탈출)
     $ service mariadb restart (mariadb 재시작)
+  11. SSH설치
+    $ apt-get install ssh
     
 
 
