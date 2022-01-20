@@ -116,7 +116,11 @@ __프로토콜 정리__
   11. SSH설치
     $ apt-get install ssh
     
-
+  12. nginx Reverse-Proxy 설정
+    $ cd /etc/nginx/sites-enabled
+    $ ls (default라는 파일이 보이는데, 이걸 삭제한 후에, nano에디터를 사용해 다시 만들고, 수정한다.)
+    $ sudo rm default
+    $ sudo nano default
 
 
   9. date를 입력하면 UTC기준으로 나오는데, 한국 기준으로 변경해보자
@@ -208,10 +212,18 @@ __프로토콜 정리__
       - 압축
       - SSL (암호화)
       - 캐시
+    > cd /etc/nginx/sites-enabled
+    > 
   __HTTPS__
   - 'Let's Encrypt'에서 3개월짜리 무료 라이센스를 받을 수 있는데, 3개월 후엔 자동으로 인증서 갱신을 통해 평생 무료로 쓰자
   > 'Let's encrypt' url = https://letsencrypt.org/ko/
 
+  __PM2란 무엇인가?__
+  - 커맨드
+  $ sudo npm install -g pm2
+  > PM2는 노드 프로세스 매니징 도구로 터미널 환경에서 node를 관리하기 편하게 도와준다. 
+  > 대표적으로 'Forever', 'Nodemon'에서 제공하는 Restart 기능 그리고 실서버 Deploy, 로그 모니터링을 더 쉽게 할 수 있다.
+  > 
 참고한 링크
 1. https://victorydntmd.tistory.com/231 
 2. https://velog.io/@ksso730/Nginx-Apache-%EB%B9%84%EA%B5%90
