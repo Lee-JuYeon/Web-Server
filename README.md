@@ -34,6 +34,21 @@ __프로토콜 정리__
   > https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
   > 본인은 'putty.exe' 64-bit x86을 받았다
   
+## Docker + Docker-compose
+  $ apt update -y && apt upgrade -y
+  $ sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+  $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  $ sudo add-apt-repository \"deb [arch=amd64] https://download.docker.com/linux/ubuntu \$(lsb_release -cs) \stable"
+  $ sudo apt-get update && sudo apt-get install docker-ce docker-ce-cli containerd.io
+  $ docker -v
+  $ sudo systemctl enable docker && service docker start
+  $ service docker status
+
+  $ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  $ sudo chmod +x /usr/local/bin/docker-compose
+  $ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+  $ docker-compose -version
+  
 ## DB (Window10)
   1. 방화벽 열기
   2. 고급설정 클릭
